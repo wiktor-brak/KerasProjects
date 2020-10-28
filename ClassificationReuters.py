@@ -49,10 +49,12 @@ partial_x_train = x_train[1000:]
 y_val = one_hot_train_labels[:1000]
 partial_y_train = one_hot_train_labels[1000:]
 
+
 history = model.fit(partial_x_train,
                     partial_y_train,
                     epochs=9,
-                    batch_size=512,               validation_data=(x_val, y_val))
+                    batch_size=512,
+                    validation_data=(x_val, y_val))
 
 acc = history.history['accuracy']
 vaL_acc = history.history['val_accuracy']
